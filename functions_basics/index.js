@@ -74,3 +74,74 @@ function myFunc(a) {
   console.log(a)
 }
 myFunc(10)
+
+// Practice
+
+function mult(a, b, c) {
+  const result = a * b * c
+  console.log(result)
+}
+mult(1, 3, 2)
+mult(2, 3, "abc")
+console.log(mult(1, 3, 2)) // 6 is printed inside of the function and functions returns "undefined"
+
+function concatenateStrings(str1, str2) {
+  return str1 + str2
+}
+console.log(concatenateStrings("Hello ", "World"))
+
+function outerFunction(a, b) {
+  function innerFunction(c) {
+    return c * c
+  }
+  const sum = a + b
+  const innerResult = innerFunction(sum)
+  console.log(innerResult)
+}
+outerFunction(2, 3)
+//innerFunction(2)  // innerFunction is not defined
+
+const fun = function (a, b) {
+  console.log("ravi")
+}
+fun()
+
+/**
+ * Try to declare function expression
+ */
+//Its not possible to use function expression standalone
+//function() {}  // can't use function declaration standalone Error: Unexpected token (
+
+/**
+ * Example 2
+ * Assign function expression to the variable
+ */
+const myFun = function () {}
+// console.log(myFun()) // undefined
+
+/**
+ * Example 3
+ * Callback function
+ */
+
+setTimeout(function () {
+  console.log("Delayed Message")
+}, 1000)
+
+let i = 1
+setInterval(function () {
+  console.log("Message logged each " + i + " second")
+  i++
+}, 1000)
+
+let count = 1
+const myInterval = setInterval(function () {
+  console.log("Here is message number " + count)
+  count++
+}, 2000)
+
+console.log(myInterval)
+
+setTimeout(function () {
+  clearInterval(myInterval)
+}, 10000)
